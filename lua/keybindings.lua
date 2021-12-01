@@ -19,10 +19,14 @@ map('v', '>', '>gv', opt)
 map("n", "sv", ":vsp<CR>", opt)
 map("n", "sh", ":sp<CR>", opt)
 
+-- 保存/退出
+map("n", "<leader>fs", ":w<CR>", opt)
+map("n", "<leader>qq", ":wq<CR>", opt)
+
 -- 关闭当前
-map("n", "sc", "<C-w>c", opt)
+map("n", "<leader>wd", "<C-w>c", opt)
 -- 关闭其他
-map("n", "so", "<C-w>o", opt) -- close others
+map("n", "<leader>wod", "<C-w>o", opt) -- close others
 
 -- 比例控制
 map("n", "s>", ":vertical resize +20<CR>", opt)
@@ -42,7 +46,7 @@ map("n", "<A-l>", "<C-w>l", opt)
 
 -- Telescope
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
-map("n", "<leader>f", ":Telescope find_files<CR>", opt)
+map("n", "<leader>ff", ":Telescope find_files<CR>", opt)
 map("n", "<leader>g", ":Telescope live_grep<CR>", opt)
 
 -- nvimTree
@@ -60,8 +64,8 @@ pluginKeys = {}
 pluginKeys.comment = {
   -- normal 模式
   toggler = {
-    line = '<leader>c',
-    block = '<leader>bc',
+    line = '<leader>cl',
+    block = '<leader>cb',
   },
   -- visual 模式
   opleader = {
