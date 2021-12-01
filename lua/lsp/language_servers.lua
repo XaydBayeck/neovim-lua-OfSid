@@ -12,11 +12,11 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 
-require'lspconfig/configs'.ls_emmet = {
+require'lspconfig/configs'.emmet_ls = {
   default_config = {
-    cmd = { 'ls_emmet', '--stdio' };
-    filetypes = { 'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'haml',
-      'xml', 'xsl', 'pug', 'slim', 'sass', 'stylus', 'less', 'sss'};
+    cmd = { 'emmet-ls', '--stdio' };
+    filetypes = { 'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact',
+      'xml', 'xsl', 'slim', 'sass', 'stylus', 'less'};
     root_dir = function(fname)
       return vim.loop.cwd()
     end;
@@ -26,7 +26,7 @@ require'lspconfig/configs'.ls_emmet = {
 
 -- Use a lop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = {'html', 'rust_analyzer', 'tsserver','ls_emmet' }
+local servers = {'html', 'rust_analyzer', 'tsserver', 'clangd', 'hls'}
 local nvim_lsp = require('lspconfig')
 for _, server in ipairs(servers) do
   nvim_lsp[server].setup {

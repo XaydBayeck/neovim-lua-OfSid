@@ -7,7 +7,7 @@
 - https://github.com/typescript-language-server/typescript-language-server
 - https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
 
-`yarn global add vscode-langservers-extracte`
+`yarn global add vscode-langservers-extracted`
 
 ## emmet
 
