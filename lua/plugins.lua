@@ -1,6 +1,10 @@
 return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  -- a start screen of vim or nvim
+  use 'mhinz/vim-startify'
+  -- animatial statusline
+  use 'windwp/windline.nvim'
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- which-key
@@ -41,5 +45,9 @@ return require('packer').startup(function()
   -- gruvbox theme
   use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 
+  -- lua edit
+  --[[ use 'tjdevries/nlua.nvim'
+  use 'euclidianAce/BetterLua.vim'
+  use 'tjdevries/manillua.nvim' ]]
 end)
 

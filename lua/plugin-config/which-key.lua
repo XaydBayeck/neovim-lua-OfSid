@@ -4,9 +4,16 @@ local wk = require("which-key")
 local mappings = {
   q = {":q<CR>", "QUit"},
   Q = {":wq<CR>", "Save & Quit"},
-  w = {":w<CR>", "Save"},
-  E = {":e ~/.config/nvim/init.vim<CR>" , "Edit config"},
-  f = {":Telescope find_files<CR>","Telescope Find Files"},
+  w = {
+    name = "window",
+    w = {":w<CR>", "Save"}
+  },
+  e = {":e ~/.config/nvim/init.vim<CR>" , "Edit config"},
+  f = {
+    name = "files",
+    f = {":Telescope find_files<CR>","Telescope Find Files"}
+  },
+  o ={name="open"},
   r = {":Telescope live_grep<CR>","Telescope Live Grep"},
   a = {'<cmd>lua vim.lsp.buf.code_action()<CR>', 'Code action'},
   g = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>','Show line diagnostics'},
