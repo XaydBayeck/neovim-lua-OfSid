@@ -10,18 +10,7 @@ set background=dark " or light if you want light mode
 colorscheme gruvbox
 
 " 插件配置
-lua require('plugin-config/which-key')
-lua require('plugin-config/nvim-treesitter')
-lua require('plugin-config/telescope')
-lua require('plugin-config/nvim-autopairs')
-lua require('plugin-config/nvim-tree')
-lua require('plugin-config/bufferline')
-lua require('plugin-config/surround')
-lua require('plugin-config/comment')
-lua require('plugin-config/nvim-colorizer')
-lua require('plugin-config/rust-tools')
-lua require('plugin-config/windline')
-lua require('plugin-config/luadev')
+lua require('plugin_config')
 
 " lsp
 lua require('lsp/nvim-cmp-config')
