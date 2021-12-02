@@ -21,6 +21,7 @@ lua require('plugin-config/comment')
 lua require('plugin-config/nvim-colorizer')
 lua require('plugin-config/rust-tools')
 lua require('plugin-config/windline')
+lua require('plugin-config/luadev')
 
 " lsp
 lua require('lsp/nvim-cmp-config')

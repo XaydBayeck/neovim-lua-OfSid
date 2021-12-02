@@ -19,15 +19,6 @@ map('v', '>', '>gv', opt)
 map("n", "sv", ":vsp<CR>", opt)
 map("n", "sh", ":sp<CR>", opt)
 
--- 保存/退出
-map("n", "<leader>fs", ":w<CR>", opt)
-map("n", "<leader>qq", ":wq<CR>", opt)
-
--- 关闭当前
-map("n", "<leader>wd", "<C-w>c", opt)
--- 关闭其他
-map("n", "<leader>wod", "<C-w>o", opt) -- close others
-
 -- 比例控制
 map("n", "s>", ":vertical resize +20<CR>", opt)
 map("n", "s<", ":vertical resize -20<CR>", opt)
@@ -70,8 +61,8 @@ pluginKeys.comment = {
   -- visual 模式
   opleader = {
     -- ctrl + / 
-    line = '<C-_>',
-    block = 'bc',
+    line = '<leader>cl',
+    block = '<leader>cb',
   },
 }
 

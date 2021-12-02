@@ -29,7 +29,7 @@ return require('packer').startup(function()
   use "rafamadriz/friendly-snippets"
   -- use 'nvim-autopairs'
   use "windwp/nvim-autopairs"
-  -- nvim-tree 
+  -- nvim-tree
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
@@ -37,17 +37,19 @@ return require('packer').startup(function()
   -- bufferline
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
   -- surround
-  use "blackCauldron7/surround.nvim" 
-  -- Comment 
-  use 'numToStr/Comment.nvim' 
+  use "blackCauldron7/surround.nvim"
+  -- Comment
+  use 'numToStr/Comment.nvim'
   -- nvim-coloizer
   use 'norcalli/nvim-colorizer.lua'
   -- gruvbox theme
   use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 
   -- lua edit
-  --[[ use 'tjdevries/nlua.nvim'
   use 'euclidianAce/BetterLua.vim'
-  use 'tjdevries/manillua.nvim' ]]
+  use 'tjdevries/manillua.nvim'
+
+  -- easy motion
+  use 'easymotion/vim-easymotion'
 end)
 

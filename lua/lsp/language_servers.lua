@@ -25,7 +25,7 @@ require'lspconfig/configs'.emmet_ls = {
 }
 
 -- Use a lop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
+-- map buffer local keybindings when the language server attaches, 'sumneko_lua'
 local servers = {'html', 'rust_analyzer', 'tsserver', 'clangd', 'hls', 'pylsp'}
 local nvim_lsp = require('lspconfig')
 for _, server in ipairs(servers) do
