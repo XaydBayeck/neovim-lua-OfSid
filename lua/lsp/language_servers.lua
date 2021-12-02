@@ -1,10 +1,10 @@
 
---[[ 
+--[[
 
 language server config
 
 https://github.com/typescript-language-server/typescript-language-server
-https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md 
+https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
 
 --]]
 
@@ -12,7 +12,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 
-require'lspconfig/configs'.emmet_ls = {
+--[[ require'lspconfig/configs'.emmet_ls = {
   default_config = {
     cmd = { 'emmet-ls', '--stdio' };
     filetypes = { 'html', 'css', 'scss', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact',
@@ -22,7 +22,7 @@ require'lspconfig/configs'.emmet_ls = {
     end;
     settings = {};
   };
-}
+} ]]
 
 -- Use a lop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches, 'sumneko_lua'
@@ -31,7 +31,10 @@ local nvim_lsp = require('lspconfig')
 for _, server in ipairs(servers) do
   nvim_lsp[server].setup {
     capabilities = capabilities,
-    on_attach = require('keybindings').lsp_on_attach,
+    on_attach = function (client)
+      require 'keybindings'.lsp_on_attach(client)
+      require 'illuminate'.on_attach(client)
+    end,
     flags = {
       debounce_text_changes = 150,
     }

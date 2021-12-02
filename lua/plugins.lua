@@ -51,5 +51,8 @@ return require('packer').startup(function()
 
   -- easy motion
   use 'easymotion/vim-easymotion'
+
+  -- highlight word under your cursor
+  use 'RRethy/vim-illuminate'
 end)
 
