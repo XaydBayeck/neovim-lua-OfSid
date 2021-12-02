@@ -54,5 +54,8 @@ return require('packer').startup(function()
 
   -- highlight word under your cursor
   use 'RRethy/vim-illuminate'
+
+  -- youdao dictionary
+  use 'ianva/vim-youdao-translater'
 end)
 

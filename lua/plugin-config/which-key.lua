@@ -66,6 +66,10 @@ local mappings = {
     n = {"<Plug>(easymotion-n)", "Jump to latest \"/\" or \"?\" forward. See n."},
     N = {"<Plug>(easymotion-N)", "Jump to latest \"/\" or \"?\" backward. See N."},
     s = {"<Plug>(easymotion-s)", "Find(Search) {char} forward and backward.See f and F."}
+  },
+  y = {
+    name = "youdao cloud dictionary",
+    d = {":<C-u>Yde", "input words to translate"}
   }
 }
 wk.register(mappings, { prefix = "<leader>" })

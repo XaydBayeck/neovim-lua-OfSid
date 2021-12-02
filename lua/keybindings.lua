@@ -48,7 +48,7 @@ map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 
 
-pluginKeys = {}
+local pluginKeys = {}
 
 -- 代码注释插件
 -- see ./lua/plugin-config/comment.lua
@@ -60,11 +60,15 @@ pluginKeys.comment = {
   },
   -- visual 模式
   opleader = {
-    -- ctrl + / 
+    -- ctrl + /
     line = '<leader>cl',
     block = '<leader>cb',
   },
 }
+
+-- 有道云词典
+map('n', "<C-t>", ":<C-u>Ydv<CR>", opt)
+map('v', "<C-t>", ":<C-u>Ydc<CR>", opt)
 
 -- lsp 快捷键设置
 -- ./lua/lsp/language_servers.lua
