@@ -74,5 +74,21 @@ local mappings = {
 }
 wk.register(mappings, { prefix = "<leader>" })
 
+local lspmapping = {
+    D = {'<cmd>lua vim.lsp.buf.declaration()<CR>', "declaration"},
+    d = {'<cmd>lua vim.lsp.buf.definition()<CR>', "definition"},
+    h = {'<cmd>lua vim.lsp.buf.hover()<CR>', "hover"},
+    rr = {'<cmd>lua vim.lsp.buf.references()<CR>', "references"},
+    rn = {'<cmd>lua vim.lsp.buf.rename()<CR>', "rename"},
+    t = {
+      name = "diagnostic goto",
+      n={'<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', "goto_next"},
+      p={'<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', "goto_prev"},
+    }
+
+}
+
+wk.register(lspmapping, {prefix = "g"})
+
 
 
