@@ -1,4 +1,4 @@
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   -- a start screen of vim or nvim
@@ -57,5 +57,8 @@ return require('packer').startup(function()
 
   -- youdao dictionary
   use 'ianva/vim-youdao-translater'
+
+  -- markdown preview
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
 end)
 
