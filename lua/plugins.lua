@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
   -- lspconfig
   use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
   -- rust-tools
   use 'simrat39/rust-tools.nvim'
   -- nvim-cmp
