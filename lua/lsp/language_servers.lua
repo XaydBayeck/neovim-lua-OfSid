@@ -26,7 +26,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Use a lop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches, 'sumneko_lua'
-local servers = {'html', 'rust_analyzer', 'tsserver', 'clangd', 'hls', 'pylsp', 'julials'}
+local servers = {'html', 'rust_analyzer', 'tsserver', 'clangd', 'hls', 'pylsp', 'julials', 'rnix', 'sumneko_lua'}
 local nvim_lsp = require('lspconfig')
 for _, server in ipairs(servers) do
   nvim_lsp[server].setup {
