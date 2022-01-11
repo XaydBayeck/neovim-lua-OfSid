@@ -61,5 +61,11 @@ return require('packer').startup(function(use)
 
   -- markdown preview
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+
+  -- fish edit
+  use 'dag/vim-fish'
+
+  -- nix support
+  use 'LnL7/vim-nix'
 end)
 
