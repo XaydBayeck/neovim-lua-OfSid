@@ -13,17 +13,18 @@ return require('packer').startup(function(use)
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
+  use {'nvim-telescope/telescope-ui-select.nvim' }
   -- lspconfig
   use 'neovim/nvim-lspconfig'
   use 'williamboman/nvim-lsp-installer'
   -- rust-tools
   use 'simrat39/rust-tools.nvim'
   -- nvim-cmp
+  use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-vsnip'
   -- vsnip
   use 'hrsh7th/vim-vsnip'
@@ -36,9 +37,14 @@ return require('packer').startup(function(use)
     requires = 'kyazdani42/nvim-web-devicons',
   }
   -- bufferline
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
   -- surround
-  use "blackCauldron7/surround.nvim"
+  use {
+    "ur4ltz/surround.nvim",
+    config = function ()
+      require"surround".setup {mappings_style = "surround"}
+    end
+  }
   -- Comment
   use 'numToStr/Comment.nvim'
   -- nvim-coloizer
@@ -60,12 +66,20 @@ return require('packer').startup(function(use)
   use 'ianva/vim-youdao-translater'
 
   -- markdown preview
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  -- use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', cmd = 'MarkdownPreview'}
 
   -- fish edit
   use 'dag/vim-fish'
 
   -- nix support
   use 'LnL7/vim-nix'
+
+  -- yuck eww config language support
+  use 'elkowar/yuck.vim'
 end)
 

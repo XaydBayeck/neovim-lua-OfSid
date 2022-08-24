@@ -1,1 +1,1 @@
-vim.g.mkdp_browser = 'firefox'
+vim.g.mkdp_browser = ''

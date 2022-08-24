@@ -41,6 +41,33 @@ for _, server in ipairs(servers) do
   }
 end
 
+nvim_lsp.rust_analyzer.setup{
+  settings={
+    ['rust_analyzer'] = {
+      completion = {
+        autoimport = {
+          enable = true,
+        },
+      },
+      imports = {
+        granularity = {
+          group = "module",
+        },
+        prefix = "self",
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
+        },
+        features = "all"
+      },
+      procMacro = {
+        enable = true
+      }
+    }
+  }
+}
+
 -- local capabilities = vim.lsp.protocol.make_client_capabilities()
 -- capabilities.textDocument.completion.completionItem.snippetSupport = true
 

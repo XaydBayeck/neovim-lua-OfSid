@@ -69,7 +69,8 @@ local mappings = {
   },
   y = {
     name = "youdao cloud dictionary",
-    d = {":<C-u>Yde", "input words to translate"}
+    d = {":<C-u>Yde<CR>", "input words to translate"},
+    o = {":<C-u>Ydc<CR>", "translate words at your point"}
   }
 }
 wk.register(mappings, { prefix = "<leader>" })

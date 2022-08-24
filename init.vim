@@ -9,6 +9,8 @@ lua require('keybindings')
 set background=dark " or light if you want light mode
 colorscheme gruvbox
 
+set guifont=CodeNewRoman_Nerd_Font:h10
+
 " 插件配置
 lua require('plugin_config')
 
