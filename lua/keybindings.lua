@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- 本地变量
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opt = {noremap = true, silent = true }
 
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
@@ -32,65 +32,19 @@ map("n", "<A-j>", "<C-w>j", opt)
 map("n", "<A-k>", "<C-w>k", opt)
 map("n", "<A-l>", "<C-w>l", opt)
 
+-- magic search
+map("n", "/", '/\\v', opt)
+map("v", "/", '/\\v', opt)
+
+-- map("n", "<leader>w", "<C-w>", opt)
+-- map("v", "<leader>w", "<C-w>", opt)
+
 --------------------------------------------------------------------
 --插件快捷键
-
--- Telescope
-map("n", "<C-p>", ":Telescope find_files<CR>", opt)
-map("n", "<leader>ff", ":Telescope find_files<CR>", opt)
-map("n", "<leader>g", ":Telescope live_grep<CR>", opt)
-
--- nvimTree
-map('n', '<leader>ot', ':NvimTreeToggle<CR>', opt)
 
 -- bufferline 左右切换
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 
-
-local pluginKeys = {}
-
--- 代码注释插件
--- see ./lua/plugin-config/comment.lua
-pluginKeys.comment = {
-  -- normal 模式
-  toggler = {
-    line = '<leader>cl',
-    block = '<leader>cb',
-  },
-  -- visual 模式
-  opleader = {
-    -- ctrl + /
-    line = '<leader>cl',
-    block = '<leader>cb',
-  },
-}
-
 -- 有道云词典
-map('n', "<C-t>", ":<C-u>Ydv<CR>", opt)
 map('v', "<C-t>", ":<C-u>Ydc<CR>", opt)
-
--- lsp 快捷键设置
--- ./lua/lsp/language_servers.lua
-pluginKeys.lsp_on_attach = function(_, bufnr)
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-      -- Enable completion triggered by <c-x><c-o>
-    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-    --- Mappings.
-    local opts = { noremap=true, silent=true }
-    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    buf_set_keymap('n', 'gh', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    buf_set_keymap('n', 'grr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    buf_set_keymap('n', 'grn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    buf_set_keymap('n', 'gtn' , '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-    buf_set_keymap('n', 'gtp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-    buf_set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-    buf_set_keymap('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-end
-
-return pluginKeys

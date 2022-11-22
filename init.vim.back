@@ -1,4 +1,4 @@
-" 基础设置
+" 基本设置
 lua require('basic')
 " Packer插件管理
 lua require('plugins')
@@ -9,7 +9,7 @@ lua require('keybindings')
 set background=dark " or light if you want light mode
 colorscheme gruvbox
 
-set guifont=CodeNewRoman_Nerd_Font:h10
+set guifont=CodeNewRoman_Nerd_Font:h14
 
 " 插件配置
 lua require('plugin_config')
@@ -26,3 +26,4 @@ lua require('lsp/language_servers')
 " magic search
 nnoremap / /\v
 vnoremap / /\v
+
