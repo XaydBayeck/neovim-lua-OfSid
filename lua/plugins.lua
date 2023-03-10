@@ -49,6 +49,8 @@ return require('packer').startup(function(use)
         require('crates').setup()
     end,
   }
+  -- ron
+  use 'ron-rs/ron.vim'
   -- clangd
   use {
     'p00f/clangd_extensions.nvim',
